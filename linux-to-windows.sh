@@ -36,9 +36,9 @@ link1_status=$(curl -Is http://download.microsoft.com/download/6/2/A/62A76ABB-99
 link2_status=$(curl -Is https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://archive.org/download/WS2012R2/WS2012R2.ISO # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -O /mediabots/https://download2284.mediafire.com/8gpraai58usg/zu74k6uicosvjce/WS2012R2.iso
+	sudo wget -O /mediabots/https://archive.org/download/ws-2012-r-2.-iso/WS2012R2.ISO.iso
 elif [ $link2_status = "200" -o $link2_status = "301" -o $link2_status = "302" ] ; then 
-	sudo wget -P /mediabots https://download2284.mediafire.com/8gpraai58usg/zu74k6uicosvjce/WS2012R2.iso
+	sudo wget -P /mediabots https://archive.org/download/ws-2012-r-2.-iso/WS2012R2.ISO.iso
 else
 	echo -e "${RED}[Error]${NC} ${YELLOW}Sorry! None of Windows OS image urls are available , please report about this issue on Github page : ${NC}https://github.com/mediabots/Linux-to-Windows-with-QEMU"
 	echo "Exiting.."
@@ -49,11 +49,11 @@ sudo wget -P /floppy https://ftp.mozilla.org/pub/firefox/releases/64.0/win32/en-
 sudo mv /floppy/'Firefox Setup 64.0.exe' /floppy/Firefox.exe
 
 # SQL1
-sudo wget -P /floppy http://download948.mediafire.com/4ih4ovtdmq2g/gdy2spz3a2pst9p/1+instalar+este+primero.exe
+sudo wget -P /floppy https://archive.org/download/1-instalar-este-primero/1%20instalar%20este%20primero.exe
 sudo mv /floppy/'1 instalar este primero.exe' /floppy/sql-1.exe
 
 # SQL2
-sudo wget -P /floppy http://download1639.mediafire.com/0mp60thke0ug/9eiayt3vqxhyx8s/2+Instalar+este+segundo.exe
+sudo wget -P /floppy https://archive.org/download/2-instalar-este-segundo/2%20Instalar%20este%20segundo.exe
 sudo mv /floppy/'2 Instalar este segundo.exe' /floppy/sql-2.exe
 
 # Intel Network Adapter for Windows Server 2012 R2 
