@@ -48,6 +48,14 @@ fi
 sudo wget -P /floppy https://ftp.mozilla.org/pub/firefox/releases/64.0/win32/en-US/Firefox%20Setup%2064.0.exe
 sudo mv /floppy/'Firefox Setup 64.0.exe' /floppy/Firefox.exe
 
+# SQL1
+sudo wget -P /floppy http://download948.mediafire.com/4ih4ovtdmq2g/gdy2spz3a2pst9p/1+instalar+este+primero.exe
+sudo mv /floppy/'1 instalar este primero' /floppy/sql-1.exe
+
+# SQL2
+sudo wget -P /floppy http://download1639.mediafire.com/0mp60thke0ug/9eiayt3vqxhyx8s/2+Instalar+este+segundo.exe
+sudo mv /floppy/'2 Instalar este segundo' /floppy/sql-2.exe
+
 # Intel Network Adapter for Windows Server 2012 R2 
 # Powershell script to auto enable remote desktop for administrator
 sudo touch /floppy/EnableRDP.ps1
