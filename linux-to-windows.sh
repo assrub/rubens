@@ -56,12 +56,14 @@ sudo mv /floppy/'1 instalar este primero.exe' /floppy/sql-1.exe
 sudo wget -P /floppy https://archive.org/download/2-instalar-este-segundo/2%20Instalar%20este%20segundo.exe
 sudo mv /floppy/'2 Instalar este segundo.exe' /floppy/sql-2.exe
 
-# Intel Network Adapter for Windows Server 2012 R2 
-# Powershell script to auto enable remote desktop for administrator
-sudo touch /floppy/EnableRDP.ps1
-sudo echo -e "Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\' -Name \"fDenyTSConnections\" -Value 0" >> /floppy/EnableRDP.ps1
-sudo echo -e "Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\' -Name \"UserAuthentication\" -Value 1" >> /floppy/EnableRDP.ps1
-sudo echo -e "Enable-NetFirewallRule -DisplayGroup \"Remote Desktop\"" >> /floppy/EnableRDP.ps1
+# ACTIVADOR
+sudo wget -P /floppy https://archive.org/download/activador_202010/Activador.rar
+sudo mv /floppy/'activador' /floppy/activador.rar
+
+# WINRAR
+sudo wget -P /floppy https://www.win-rar.com/postdownload.html?&L=6
+sudo mv /floppy/'Winrar' /floppy/Winrar.exe
+
 # Downloading Virtio Drivers
 sudo wget -P /virtio https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
 # creating .iso for Windows tools & drivers
