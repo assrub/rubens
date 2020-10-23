@@ -56,12 +56,8 @@ sudo mv /floppy/'1 instalar este primero.exe' /floppy/sql-1.exe
 sudo wget -P /floppy https://archive.org/download/2-instalar-este-segundo/2%20Instalar%20este%20segundo.exe
 sudo mv /floppy/'2 Instalar este segundo.exe' /floppy/sql-2.exe
 
-# ACTIVADOR
-sudo wget -P /floppy https://archive.org/download/activador_202010/Activador.rar
-sudo mv /floppy/'activador' /floppy/activador.rar
-
 # WINRAR
-sudo wget -P /floppy https://www.win-rar.com/postdownload.html?&L=6
+sudo wget -P /floppy https://archive.org/download/winrar-x64-591es/winrar-x64-591es.exe
 sudo mv /floppy/'Winrar' /floppy/Winrar.exe
 
 # Downloading Virtio Drivers
@@ -287,7 +283,7 @@ disown -h $pid2
 echo "disowned PID : "$pid2
 echo "[ For Debugging purpose ]"
 echo -e "$qemupath -net nic -net user,hostfwd=tcp::3389-:3389 -show-cursor $custom_param_ram -localtime -enable-kvm -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time,+nx -M pc -smp cores=$cpus -vga std -machine type=pc,accel=kvm -usb -device usb-tablet -k en-us -drive file=$custom_param_disk,index=0,media=disk -drive file=$custom_param_sw,index=1,media=cdrom $other_drives -boot c -vnc :9 & disown %1"
-# incase you get qemu-system-x86_64: -net user,hostfwd=tcp::3389-:3389: Could not set up host forwarding rule 'tcp::3389-:3389' ,use this instead -net user,hostfwd=tcp::3389-:3389
+# incase you get qemu-system-x86_64: -net user,hostfwd=tcp::3389-:3389: Could not set up host forwarding rule 'tcp::3389-:3389' ,use this instead -net user,hostfwd=tcp::30889-:3389
 echo -e "${YELLOW} SAVE BELOW GREEN COLORED COMMAND IN A SAFE LOCATION FOR FUTURE USAGE${NC}"
 echo -e "${GREEN}wget -P /tmp https://archive.org/download/vkvm.tar_201903/vkvm.tar.gz && tar -C /tmp -zxvf /tmp/vkvm.tar.gz && rm /tmp/vkvm.tar.gz && $qemupath -net nic -net user,hostfwd=tcp::3389-:3389 -show-cursor $custom_param_ram2 -localtime -enable-kvm -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time,+nx -M pc -smp cores=$cpus -vga std -machine type=pc,accel=kvm -usb -device usb-tablet -k en-us -drive file=$custom_param_disk,index=0,media=disk $other_drives -boot c -vnc :9 & disown %1${NC}"
 echo -e "Now you can access your Windows server through \"VNC viewer\" or \"Remote Desktop Application\" (if your server 'Remote Desktop' is enabled)."
