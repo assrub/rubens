@@ -1,0 +1,110 @@
+Historia de cofla 4 - 1
+
+//Cofla ya está terminando el primer semestre del primer ciclo, la tarea que le debe realizar
+//es mucho mas avanzada de la que tenia antes, además de sumar, restar, multiplicar y dividir
+//también necesitará calcular potencias, raices cuadradas y cubicas
+
+//CREAR SOLUCIONES ::::....
+
+//HACER UNA CALCULADORA CON TODAS ESAS CUALIDADES
+
+class CalculadoraAvanzada{
+    constructor(num1, num2){
+        this.num1 = num1;
+        this.num2 = num2;
+
+        this.num1 = parseInt(this.num1);
+        this.num2 = parseInt(this.num2);
+    }
+
+    Sumar(){
+        let resultado;
+        resultado = this.num1 + this.num2;
+        alert(`El resultado es: ` + resultado);
+    }
+    Restar(){
+        let resultado;
+        resultado = this.num1 - this.num2;
+        alert(`El resultado es: ` + resultado);
+    }
+    Multiplicar(){
+        let resultado;
+        resultado = this.num1 * this.num2;
+        alert(`El resultado es: ` + resultado);
+    }
+    Dividir(){
+        let resultado;
+        resultado = this.num1 / this.num2;
+        alert(`El resultado es: ` + resultado);
+    }
+    Potencia(){
+        let resultado;
+        resultado = num1 ** num2;
+        alert(`El resultado es: ` + resultado);
+    }
+    Raizcuadrada(){
+        let resultado;
+        resultado = Math.sqrt(this.num1);
+        alert(`El resultado es: ` + resultado);
+    }
+    Raizcubica(){
+        let resultado;
+        resultado = Math.pow(num1, 1/3);
+        alert(`El resultado es: ` + resultado);
+    }
+}
+
+
+let num1, num2;
+let salir;
+
+
+do{
+let calculo = prompt(`1 - Sumar, 2 - Restar, 3 - Multiplicar, 4 - dividir, 5 - Potencia, 6 - Raiz cuadrada, 7 - Raiz cubica.`);
+calculo = parseInt(calculo);
+
+if (calculo < 1 || calculo > 7 ){
+    alert("El número ingresado es incorrecto");
+}else
+{
+  if(calculo == 6 || calculo == 7){  
+       num1 = prompt(`ingrese el número`);
+  }else if(calculo == 5){
+       num1 = prompt(`Ingrese el digito`);
+       num2 = prompt(`Ingrese la potencia`);
+  }else{
+       num1 = prompt(`Ingrese el primer digito`);
+       num2 = prompt(`Ingrese el segundo digito`);
+  }
+
+    calculadora = new CalculadoraAvanzada(num1, num2);
+
+  if (calculo == 1){
+         calculadora.Sumar();
+      }else if (calculo == 2){
+         calculadora.Restar();
+      }else if (calculo == 3){
+         calculadora.Multiplicar();
+      }else if (calculo == 4){
+         calculadora.Dividir();
+      }else if (calculo == 5){
+         calculadora.Potencia();
+      }else if (calculo == 6){
+         calculadora.Raizcuadrada();
+      }else if (calculo == 7){
+         calculadora.Raizcubica();
+      }else{  
+      alert("El número ingresado es incorrecto!.")
+    } 
+
+}
+
+salir = prompt("Salir - 1")
+
+}while(salir != 1)
+
+
+
+
+
+
