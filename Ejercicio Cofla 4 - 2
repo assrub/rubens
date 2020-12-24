@@ -1,0 +1,49 @@
+//La facutad de cofla esta por comenzar y  ya las 12 materias de la carrera
+//tienen asignado un profesor y todos los alumnos que se anotaran en dichas clases
+// pero necesitamos ver esto ordenadamente
+
+//CREAR SOLUCIONES:::..
+
+//Crear una funcion que al pasarle como parametro la materia nos devuelva:
+//  - Profesor Asignado
+//  - El nombre de todos los Alumnos
+
+// Crear una funcion que nos diga en cuantas clases esta Cofla
+// Nombrar las clases en las que esta y los profesores de cada una.
+
+const obtenerInformacion = ()=>{
+
+    materias = {
+        fisica: ["PEREZ","Juan","Pepito","Alejandro", "Alexis","Cristian"],
+        programacion: ["RODRIGUEZ", "Cofla", "Pepito","Alejandro", "Alexis", "Cristian"],
+        logica: ["RUBENS", "Juan", "Pepito","Cofla", "Alexis", "Cristian"],
+        quimica: ["WALTER", "Juan", "Pepito","Cofla", "Alexis", "Cristian"]
+    }
+
+    let i = 0;
+    let materia = [];
+    let profesor_Cofla = [];
+    let alumnoss = [];
+          for (mat in materias)
+            { 
+                for(alumnos of materias[mat]){
+                    if (alumnos == "Cofla"){
+                        i += 1;
+
+                       materia.push(mat);
+                       profesor_Cofla.push(materias[mat][0]);
+                    }
+                }   
+                alumnoss = materias[mat];
+                alumnoss.shift();
+                document.write(`-El profesor de <b>${mat}</b> es: <b style ="color:red;">${materias[mat][0]}</b> <br>`)
+                document.write(`-Sus alumnos son: <b style ="color:blue;"> ${alumnoss} </b> <br><br>`)
+            }
+
+    document.write(`<br> Cofla esta en ${i} clases.`);
+    document.write(`<br> Cursa las materias: ${materia}`);
+    document.write(`<br> Sus profesores son : ${profesor_Cofla}`);
+
+}
+
+obtenerInformacion();
