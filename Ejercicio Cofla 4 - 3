@@ -1,0 +1,59 @@
+//Cofla ya vió 12 materias y se decidió en cual se va a inscribir, asi que en tres días lo hará
+//El problema es que se rompio el sistema de inscripciones.
+
+//Crear soluciones:::..
+// - Crear una funcion para preguntarle a cofla en que materia se quiere inscribir.
+// - Si ya hay 20 alumnos anotados en la materia negarle la inscripción.
+// - Si hay menos de 20 alumnos inscribir a cofla y añadirlo a la lista de alumnos.
+
+
+const Inscripcion = (alumno, materia)=>{
+       
+    Materias = {
+         matematica: ["Raul Montero","Cristian Uber","Cristian Fernandez","Niclas Perez","Dana Tailor",
+                      "Jasinto Moreno", "Emilia Fernandez", "Guillermo Caliz","Andres Deboto", 
+                      "Mauro Hernandez", "Daniela Castaño", "Yamila Sans", "kevin Ohaiser", 
+                      "Aymara Sanchez", "Lucero Montenegro", "Paula Carrillo","Cristian Perez",
+                      "Alejandro Alvarez","Matias Da Silva", "Mauro Di dio"],
+               
+              fisica:  ["Raul Montero","Cristian Uber","Cristian Fernandez","Niclas Perez","Dana Tailor",
+                        "Jasinto Moreno", "Emilia Fernandez", "Guillermo Caliz","Andres Deboto", 
+                        "Mauro Hernandez", "Daniela Castaño", "Yamila Sans", "kevin Ohaiser", 
+                        "Aymara Sanchez", "Lucero Montenegro", "Paula Carrillo","Cristian Perez",
+                        "Mauro Di dio"],
+
+             quimica:  ["Raul Montero","Cristian Uber","Cristian Fernandez","Niclas Perez","Dana Tailor",
+                        "Jasinto Moreno", "Emilia Fernandez", "Guillermo Caliz","Andres Deboto", 
+                        "Mauro Hernandez", "Daniela Castaño", "Yamila Sans", "kevin Ohaiser", 
+                        "Aymara Sanchez", "Lucero Montenegro", "Paula Carrillo"]
+    }
+    
+     if(Materias[materia].length < 19){
+
+          Materias[materia].push(alumno);
+          alert(`Felicitaciones ${alumno} haz sido inscripto a ${materia}`);
+
+          for (totalMaterias in Materias){
+                document.write(`<br>Materia: <b>${totalMaterias}</b><br><br>`);
+             
+              for (listarAlumnos in Materias[totalMaterias]){
+                    document.write(`<b>Alumno ${parseInt(listarAlumnos) + 1}:</b> ${Materias[totalMaterias][listarAlumnos]}<br>`)
+                }
+            }
+
+         }else{
+           alert("El cupo esta lleno!");
+        }
+
+}
+
+
+let Materia_Elegida;
+let Alumno;
+
+Alumno = prompt("Ingrese su nombre");
+Alumno = Alumno.toLowerCase(); //Transforma el texto en minuscula
+Materia_Elegida = prompt("Que materia deseas inscribirte ? (Matematica - Fisica - Quimica)");
+Materia_Elegida = Materia_Elegida.toLowerCase();
+
+Inscripcion(Alumno, Materia_Elegida); //Accedemos a la funcion con el nombre del alumno y la materia elegida
